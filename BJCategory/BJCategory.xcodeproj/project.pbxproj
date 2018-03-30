@@ -16,6 +16,9 @@
 		CE4B94A2206DDCA9007994D9 /* BJCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94A1206DDCA9007994D9 /* BJCategoryTests.m */; };
 		CE4B94AD206DDCA9007994D9 /* BJCategoryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94AC206DDCA9007994D9 /* BJCategoryUITests.m */; };
 		CE4B94BD206DDD2F007994D9 /* UIColor+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94BB206DDD2E007994D9 /* UIColor+BJExtend.m */; };
+		CE4B94C2206DE3ED007994D9 /* UIView+BJLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94BF206DE3EC007994D9 /* UIView+BJLayout.m */; };
+		CE4B94C3206DE3ED007994D9 /* NSObject+BJRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94C1206DE3ED007994D9 /* NSObject+BJRoute.m */; };
+		CE4B94C7206DE542007994D9 /* BJCategoryConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94C6206DE542007994D9 /* BJCategoryConst.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,13 @@
 		CE4B94AE206DDCA9007994D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4B94BB206DDD2E007994D9 /* UIColor+BJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BJExtend.m"; sourceTree = "<group>"; };
 		CE4B94BC206DDD2F007994D9 /* UIColor+BJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BJExtend.h"; sourceTree = "<group>"; };
+		CE4B94BE206DE3EC007994D9 /* UIView+BJLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BJLayout.h"; sourceTree = "<group>"; };
+		CE4B94BF206DE3EC007994D9 /* UIView+BJLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BJLayout.m"; sourceTree = "<group>"; };
+		CE4B94C0206DE3ED007994D9 /* NSObject+BJRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BJRoute.h"; sourceTree = "<group>"; };
+		CE4B94C1206DE3ED007994D9 /* NSObject+BJRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJRoute.m"; sourceTree = "<group>"; };
+		CE4B94C4206DE4E2007994D9 /* BJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJCategory.h; sourceTree = "<group>"; };
+		CE4B94C5206DE542007994D9 /* BJCategoryConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJCategoryConst.h; sourceTree = "<group>"; };
+		CE4B94C6206DE542007994D9 /* BJCategoryConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJCategoryConst.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +149,15 @@
 		CE4B94BA206DDCED007994D9 /* BJCategories */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
+				CE4B94C5206DE542007994D9 /* BJCategoryConst.h */,
+				CE4B94C6206DE542007994D9 /* BJCategoryConst.m */,
 				CE4B94BC206DDD2F007994D9 /* UIColor+BJExtend.h */,
 				CE4B94BB206DDD2E007994D9 /* UIColor+BJExtend.m */,
+				CE4B94C0206DE3ED007994D9 /* NSObject+BJRoute.h */,
+				CE4B94C1206DE3ED007994D9 /* NSObject+BJRoute.m */,
+				CE4B94BE206DE3EC007994D9 /* UIView+BJLayout.h */,
+				CE4B94BF206DE3EC007994D9 /* UIView+BJLayout.m */,
 			);
 			path = BJCategories;
 			sourceTree = "<group>";
@@ -278,10 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4B94C2206DE3ED007994D9 /* UIView+BJLayout.m in Sources */,
 				CE4B948D206DDCA9007994D9 /* ViewController.m in Sources */,
 				CE4B94BD206DDD2F007994D9 /* UIColor+BJExtend.m in Sources */,
+				CE4B94C3206DE3ED007994D9 /* NSObject+BJRoute.m in Sources */,
 				CE4B9498206DDCA9007994D9 /* main.m in Sources */,
 				CE4B948A206DDCA8007994D9 /* AppDelegate.m in Sources */,
+				CE4B94C7206DE542007994D9 /* BJCategoryConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
