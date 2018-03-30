@@ -436,7 +436,7 @@
 /** 手机号添加掩码 */
 + (NSString *)addCoverupCode:(NSString *)phoneNum
 {
-    if (phoneNum.length <= NSMaxRange(NSMakeRange(3, 4))) {
+    if (phoneNum.length < NSMaxRange(NSMakeRange(3, 4))) {
         return @"";
     }
     NSMutableString *phone = [NSMutableString stringWithString:phoneNum];
@@ -451,7 +451,7 @@
 + (NSString *)instStrSpace:(NSString *)phoneNum {
 
     if (phoneNum.length < NSMaxRange(NSMakeRange(0, 7))) {
-
+        return phoneNum;
     }
     NSMutableString *str = [[NSMutableString alloc] initWithString:phoneNum];
     [str insertString:@" "  atIndex:3];
