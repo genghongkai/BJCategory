@@ -1,9 +1,9 @@
 //
-//  UIView+EOCLayout.m
-//  WeiXinFriendCircle
+//  NSObject+RootRoute.m
+//  BJPlace
 //
-//  Created by EOC on 2017/5/8.
-//  Copyright © 2017年 @八点钟学院. All rights reserved.
+//  Created by ghk on 2018/3/29.
+//  Copyright © 2018年 geng hongkai. All rights reserved.
 //
 
 #import "UIView+BJLayout.h"

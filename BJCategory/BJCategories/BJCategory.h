@@ -4,7 +4,7 @@
 //
 //  Created by ghk on 2018/3/30.
 //  Copyright © 2018年 geng hongkai. All rights reserved.
-//
+//  代码地址：https://github.com/genghongkai/BJCategory
 
 #ifndef BJCategory_h
 #define BJCategory_h
