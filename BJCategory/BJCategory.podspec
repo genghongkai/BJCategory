@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author       = { "genghongkai" => "1159538747@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/genghongkai/BJCategory.git", :tag => "0.0.1" }
-  s.source_files  = "BJCategory", "BJCategories/**/*.{h,m}"
+  s.source_files  = "BJCategory", "BJCategory/BJCategories/**/*.{h,m}"
   s.framework  = "UIKit"
   s.framework  = "XCTest"
 end
