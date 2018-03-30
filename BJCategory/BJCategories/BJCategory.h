@@ -13,5 +13,11 @@
 #import "NSObject+BJRoute.h"
 #import "BJCategoryConst.h"
 #import "UIView+BJLayout.h"
+#import "NSString+BJExtend.h"
+#import "UIImageView+BJExtend.h"
+#import "UIBarButtonItem+BJExtend.h"
+#import "UIDevice+BJExtend.h"
+#import "UIButton+BJExtend.h"
+#import "UIImage+BJExtend.h"
 
 #endif /* BJCategory_h */

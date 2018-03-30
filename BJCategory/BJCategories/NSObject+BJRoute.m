@@ -53,7 +53,7 @@
 #pragma clang diagnostic pop
     }else{
 
-        NSLog(@"error:%@没有%@方法", targetName, actionName);
+        BJCategoryLog(@"error:%@没有%@方法", targetName, actionName);
         return nil;
     }
 }
