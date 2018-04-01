@@ -137,15 +137,13 @@
     if (!aDate.length || !bDate.length) {
         return 0;
     }
-    NSDate *dta = [[NSDate alloc] init];
-    NSDate *dtb = [[NSDate alloc] init];
 
     if ([bDate containsString:@"."]) {
         NSRange range = [bDate rangeOfString:@"."];
         bDate = [bDate substringToIndex:range.location];
     }
-    dta = [self.formatter dateFromString:aDate];
-    dtb = [self.formatter dateFromString:bDate];
+    NSDate *dta = [self.formatter dateFromString:aDate];
+    NSDate *dtb = [self.formatter dateFromString:bDate];
     NSComparisonResult result = [dta compare:dtb];
 
     return result;
