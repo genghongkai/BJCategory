@@ -19,5 +19,6 @@
 #import "UIDevice+BJExtend.h"
 #import "UIButton+BJExtend.h"
 #import "UIImage+BJExtend.h"
+#import "NSObject+BJKVO.h"
 
 #endif /* BJCategory_h */

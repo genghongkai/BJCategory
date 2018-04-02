@@ -170,9 +170,9 @@
 		CE4B94BA206DDCED007994D9 /* BJCategories */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
 				CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */,
 				CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */,
-				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
 				CE4B94C5206DE542007994D9 /* BJCategoryConst.h */,
 				CE4B94C6206DE542007994D9 /* BJCategoryConst.m */,
 				CE4B94BC206DDD2F007994D9 /* UIColor+BJExtend.h */,
@@ -509,7 +509,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 686HVF55DW;
 				INFOPLIST_FILE = BJCategory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ceshi.ceshizhengshu.BJCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,6 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 686HVF55DW;
 				INFOPLIST_FILE = BJCategory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ceshi.ceshizhengshu.BJCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
