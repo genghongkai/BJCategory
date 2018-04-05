@@ -15,7 +15,6 @@
 #define BJCategoryAssertParamNotNil(param) \
 if ((param) == NO)  \
 { \
-NSLog(@"%@ is nil",param);  \
 return nil; \
 }
 

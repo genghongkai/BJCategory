@@ -33,7 +33,6 @@ typedef void (^deallocBlock)(void);
 
 - (void)dealloc
 {
-    NSLog(@"%s",__func__);
     [self.removeArr enumerateObjectsUsingBlock:^(deallocBlock  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 
         if(obj) obj();
