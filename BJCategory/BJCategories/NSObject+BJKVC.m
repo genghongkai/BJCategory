@@ -27,7 +27,9 @@
 
         [propertyKeys addObject:ivarName];
     }
-
+    if (!keyName.length) {
+        return propertyKeys;
+    }
     //2.转为小写
     NSMutableArray *lowerKeys = [NSMutableArray array];
     for (NSString *ivarName in propertyKeys) {
