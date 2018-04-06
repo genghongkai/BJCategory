@@ -26,6 +26,8 @@
 		CE83749D206E20A900635633 /* UIDevice+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE83749C206E20A900635633 /* UIDevice+BJExtend.m */; };
 		CE8374A0206E225100635633 /* UIButton+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE83749F206E225100635633 /* UIButton+BJExtend.m */; };
 		CE8374A3206E2B2B00635633 /* UIImage+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8374A2206E2B2B00635633 /* UIImage+BJExtend.m */; };
+		CE9983762077911A00080965 /* NSObject+BJKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9983752077911A00080965 /* NSObject+BJKVC.m */; };
+		CE99837A2077963000080965 /* NSObject+BJKVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9983792077963000080965 /* NSObject+BJKVCTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,9 @@
 		CE83749F206E225100635633 /* UIButton+BJExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BJExtend.m"; sourceTree = "<group>"; };
 		CE8374A1206E2B2B00635633 /* UIImage+BJExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+BJExtend.h"; sourceTree = "<group>"; };
 		CE8374A2206E2B2B00635633 /* UIImage+BJExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BJExtend.m"; sourceTree = "<group>"; };
+		CE9983742077911A00080965 /* NSObject+BJKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BJKVC.h"; sourceTree = "<group>"; };
+		CE9983752077911A00080965 /* NSObject+BJKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVC.m"; sourceTree = "<group>"; };
+		CE9983792077963000080965 /* NSObject+BJKVCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVCTest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4B94A1206DDCA9007994D9 /* BJCategoryTests.m */,
+				CE9983792077963000080965 /* NSObject+BJKVCTest.m */,
 				CE4B94A3206DDCA9007994D9 /* Info.plist */,
 			);
 			path = BJCategoryTests;
@@ -173,6 +179,8 @@
 				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
 				CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */,
 				CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */,
+				CE9983742077911A00080965 /* NSObject+BJKVC.h */,
+				CE9983752077911A00080965 /* NSObject+BJKVC.m */,
 				CE4B94C5206DE542007994D9 /* BJCategoryConst.h */,
 				CE4B94C6206DE542007994D9 /* BJCategoryConst.m */,
 				CE4B94BC206DDD2F007994D9 /* UIColor+BJExtend.h */,
@@ -341,6 +349,7 @@
 				CE4B9498206DDCA9007994D9 /* main.m in Sources */,
 				CE837491206E170400635633 /* NSString+BJExtend.m in Sources */,
 				CE8374A3206E2B2B00635633 /* UIImage+BJExtend.m in Sources */,
+				CE9983762077911A00080965 /* NSObject+BJKVC.m in Sources */,
 				CE4B948A206DDCA8007994D9 /* AppDelegate.m in Sources */,
 				CE4FD4ED2071C4A2000BBE97 /* NSObject+BJKVO.m in Sources */,
 				CE4B94C7206DE542007994D9 /* BJCategoryConst.m in Sources */,
@@ -351,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE99837A2077963000080965 /* NSObject+BJKVCTest.m in Sources */,
 				CE4B94A2206DDCA9007994D9 /* BJCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
