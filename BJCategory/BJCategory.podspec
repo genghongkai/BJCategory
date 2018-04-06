@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
                           完善BJCategory分类,增加了找一个类(kvc)的key，在项目中找子视图的key。
                    DESC
   s.homepage     = "https://github.com/genghongkai/BJCategory"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT",}
   s.author       = { "genghongkai" => "1159538747@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/genghongkai/BJCategory.git", :tag => "0.1.2" }
