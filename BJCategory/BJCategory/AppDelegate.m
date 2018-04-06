@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    NSLog(@"%zi",[NSString compareDate:@"2012-12-22 11:22:40" withDate:@"2012-12-22 11:24:00"]);
+    
 
     return YES;
 }

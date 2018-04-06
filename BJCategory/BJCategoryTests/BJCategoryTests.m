@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSString+BJExtend.h"
 
 @interface BJCategoryTests : XCTestCase
 
@@ -25,8 +26,8 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    NSLog(@"%zi",[NSString compareDate:@"2012-12-22 11:22:40" withDate:@"2012-12-22 11:24:00"]);
 }
 
 - (void)testPerformanceExample {
