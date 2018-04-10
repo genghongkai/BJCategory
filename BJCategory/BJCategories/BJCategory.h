@@ -5,14 +5,18 @@
 //  Created by ghk on 2018/3/30.
 //  Copyright © 2018年 geng hongkai. All rights reserved.
 //  代码地址：https://github.com/genghongkai/BJCategory
-//  0.1.4
+//  0.1.5
 
 #ifndef BJCategory_h
 #define BJCategory_h
 
+#import "BJCategoryConst.h"
+
+#import "NSDictionary+Log.h"
+#import "NSObject+BJKVO.h"
+#import "NSObject+BJKVC.h"
 #import "UIColor+BJExtend.h"
 #import "NSObject+BJRoute.h"
-#import "BJCategoryConst.h"
 #import "UIView+BJLayout.h"
 #import "NSString+BJExtend.h"
 #import "UIImageView+BJExtend.h"
@@ -20,7 +24,5 @@
 #import "UIDevice+BJExtend.h"
 #import "UIButton+BJExtend.h"
 #import "UIImage+BJExtend.h"
-#import "NSObject+BJKVO.h"
-#import "NSObject+BJKVC.h"
 
 #endif /* BJCategory_h */
