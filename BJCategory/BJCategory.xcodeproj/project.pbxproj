@@ -19,6 +19,7 @@
 		CE4B94C2206DE3ED007994D9 /* UIView+BJLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94BF206DE3EC007994D9 /* UIView+BJLayout.m */; };
 		CE4B94C3206DE3ED007994D9 /* NSObject+BJRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94C1206DE3ED007994D9 /* NSObject+BJRoute.m */; };
 		CE4B94C7206DE542007994D9 /* BJCategoryConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94C6206DE542007994D9 /* BJCategoryConst.m */; };
+		CE4C5D8A207CC6CF005F89A4 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */; };
 		CE4FD4ED2071C4A2000BBE97 /* NSObject+BJKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */; };
 		CE837491206E170400635633 /* NSString+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE837490206E170400635633 /* NSString+BJExtend.m */; };
 		CE837494206E1A0700635633 /* UIImageView+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE837493206E1A0700635633 /* UIImageView+BJExtend.m */; };
@@ -73,6 +74,8 @@
 		CE4B94C4206DE4E2007994D9 /* BJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJCategory.h; sourceTree = "<group>"; };
 		CE4B94C5206DE542007994D9 /* BJCategoryConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJCategoryConst.h; sourceTree = "<group>"; };
 		CE4B94C6206DE542007994D9 /* BJCategoryConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJCategoryConst.m; sourceTree = "<group>"; };
+		CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		CE4C5D89207CC6CF005F89A4 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
 		CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVO.m"; sourceTree = "<group>"; };
 		CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BJKVO.h"; sourceTree = "<group>"; };
 		CE83748F206E170400635633 /* NSString+BJExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BJExtend.h"; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
+				CE4C5D89207CC6CF005F89A4 /* NSDictionary+Log.h */,
+				CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */,
 				CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */,
 				CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */,
 				CE9983742077911A00080965 /* NSObject+BJKVC.h */,
@@ -339,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4B94C2206DE3ED007994D9 /* UIView+BJLayout.m in Sources */,
+				CE4C5D8A207CC6CF005F89A4 /* NSDictionary+Log.m in Sources */,
 				CE8374A0206E225100635633 /* UIButton+BJExtend.m in Sources */,
 				CE4B948D206DDCA9007994D9 /* ViewController.m in Sources */,
 				CE837494206E1A0700635633 /* UIImageView+BJExtend.m in Sources */,
