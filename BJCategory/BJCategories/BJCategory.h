@@ -5,13 +5,14 @@
 //  Created by ghk on 2018/3/30.
 //  Copyright © 2018年 geng hongkai. All rights reserved.
 //  代码地址：https://github.com/genghongkai/BJCategory
-//  0.1.5
+//  0.1.6
 
 #ifndef BJCategory_h
 #define BJCategory_h
 
 #import "BJCategoryConst.h"
 
+#import "NSArray+Log.h"
 #import "NSDictionary+Log.h"
 #import "NSObject+BJKVO.h"
 #import "NSObject+BJKVC.h"

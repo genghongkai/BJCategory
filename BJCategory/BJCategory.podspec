@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BJCategory"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "完善BJCategory分类(增加了找一个类(kvc)的key)"
   s.description  = <<-DESC 
                           完善BJCategory分类,增加了找一个类(kvc)的key，在项目中找子视图的key。
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT",}
   s.author       = { "genghongkai" => "1159538747@qq.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/genghongkai/BJCategory.git", :tag => "0.1.5" }
+  s.source       = { :git => "https://github.com/genghongkai/BJCategory.git", :tag => "0.1.6" }
   s.source_files  = "BJCategory", "BJCategory/BJCategories/**/*.{h,m}"
   s.framework  = "UIKit"
 end

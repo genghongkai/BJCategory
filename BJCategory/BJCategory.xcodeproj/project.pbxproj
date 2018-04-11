@@ -21,6 +21,7 @@
 		CE4B94C7206DE542007994D9 /* BJCategoryConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4B94C6206DE542007994D9 /* BJCategoryConst.m */; };
 		CE4C5D8A207CC6CF005F89A4 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */; };
 		CE4FD4ED2071C4A2000BBE97 /* NSObject+BJKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */; };
+		CE796AF7207E126100054C8D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CE796AF6207E126100054C8D /* NSArray+Log.m */; };
 		CE837491206E170400635633 /* NSString+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE837490206E170400635633 /* NSString+BJExtend.m */; };
 		CE837494206E1A0700635633 /* UIImageView+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE837493206E1A0700635633 /* UIImageView+BJExtend.m */; };
 		CE83749A206E1D8800635633 /* UIBarButtonItem+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE837499206E1D8800635633 /* UIBarButtonItem+BJExtend.m */; };
@@ -78,6 +79,8 @@
 		CE4C5D89207CC6CF005F89A4 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
 		CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVO.m"; sourceTree = "<group>"; };
 		CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BJKVO.h"; sourceTree = "<group>"; };
+		CE796AF5207E126000054C8D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		CE796AF6207E126100054C8D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		CE83748F206E170400635633 /* NSString+BJExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BJExtend.h"; sourceTree = "<group>"; };
 		CE837490206E170400635633 /* NSString+BJExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BJExtend.m"; sourceTree = "<group>"; };
 		CE837492206E1A0700635633 /* UIImageView+BJExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BJExtend.h"; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
 				CE4B94C5206DE542007994D9 /* BJCategoryConst.h */,
 				CE4B94C6206DE542007994D9 /* BJCategoryConst.m */,
+				CE796AF5207E126000054C8D /* NSArray+Log.h */,
+				CE796AF6207E126100054C8D /* NSArray+Log.m */,
 				CE4C5D89207CC6CF005F89A4 /* NSDictionary+Log.h */,
 				CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */,
 				CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */,
@@ -347,6 +352,7 @@
 				CE4C5D8A207CC6CF005F89A4 /* NSDictionary+Log.m in Sources */,
 				CE8374A0206E225100635633 /* UIButton+BJExtend.m in Sources */,
 				CE4B948D206DDCA9007994D9 /* ViewController.m in Sources */,
+				CE796AF7207E126100054C8D /* NSArray+Log.m in Sources */,
 				CE837494206E1A0700635633 /* UIImageView+BJExtend.m in Sources */,
 				CE4B94BD206DDD2F007994D9 /* UIColor+BJExtend.m in Sources */,
 				CE83749A206E1D8800635633 /* UIBarButtonItem+BJExtend.m in Sources */,
