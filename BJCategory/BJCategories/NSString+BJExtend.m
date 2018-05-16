@@ -122,8 +122,13 @@
 }
 
 + (NSDate *)getCurrentTime{
-    NSString *dateTime=[self.formatter stringFromDate:[NSDate date]];
-    NSDate *date = [self.formatter dateFromString:dateTime];
+    NSDate *date = [NSDate date];
+    //获取当前系统所在时区
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSTimeInterval time = [zone secondsFromGMTForDate:date];
+    NSDate *dateNow = [date dateByAddingTimeInterval:time];
+    NSString *dateTime=[self.formatter stringFromDate:dateNow];
+    date = [self.formatter dateFromString:dateTime];
     return date;
 }
 + (NSString *)getCurrentTimeStr {
