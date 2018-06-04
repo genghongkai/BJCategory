@@ -26,4 +26,12 @@ typedef NS_ENUM(NSInteger, BJUIButtonImagePosition) {
  */
 - (void)bj_setImagePosition:(BJUIButtonImagePosition)postion spacing:(CGFloat)spacing;
 
+/**
+ 设置图片的位置与距离文字的间距
+
+ @param postion 图片的位置
+ @param edgeLeft 边距
+ @param spacing 图片与文字的间距
+ */
+- (void)bj_setImagePosition:(BJUIButtonImagePosition)postion edge:(CGFloat)edgeLeft spacing:(CGFloat)spacing;
 @end
