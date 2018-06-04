@@ -1,4 +1,4 @@
-lPod::Spec.new do |s|
+Pod::Spec.new do |s|
   s.name         = "BJCategory"
   s.version      = "0.1.8"
   s.summary      = "完善BJCategory分类"
