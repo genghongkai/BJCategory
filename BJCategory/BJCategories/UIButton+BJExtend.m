@@ -99,7 +99,7 @@
         case BJ_UIButtonImagePositionLeft:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
             self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
-            self.contentEdgeInsets = UIEdgeInsetsMake(edgeLeft, spacing/2, 0, spacing/2);
+            self.contentEdgeInsets = UIEdgeInsetsMake(0, edgeLeft + spacing/2, 0, edgeLeft + spacing/2);
             break;
 
         case BJ_UIButtonImagePositionRight:
@@ -107,7 +107,7 @@
             self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
 
             self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWidth + spacing/2), 0, imageWidth + spacing/2);
-            self.contentEdgeInsets = UIEdgeInsetsMake(edgeLeft, spacing/2, 0, spacing/2);
+            self.contentEdgeInsets = UIEdgeInsetsMake(0, edgeLeft + spacing/2, 0, edgeLeft + spacing/2);
             break;
         case BJ_UIButtonImagePositionTop:
             self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
