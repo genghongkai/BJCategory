@@ -10,20 +10,26 @@
 #ifndef BJCategory_h
 #define BJCategory_h
 
-#import "BJCategoryConst.h"
 
+#import "BJCategoryConst.h"
+#import "NSArray+BJExtend.h"
 #import "NSArray+Log.h"
 #import "NSDictionary+Log.h"
-#import "NSObject+BJKVO.h"
+#import "NSMutableAttributedString+BJExtend.h"
 #import "NSObject+BJKVC.h"
-#import "UIColor+BJExtend.h"
+#import "NSObject+BJKVO.h"
 #import "NSObject+BJRoute.h"
-#import "UIView+BJLayout.h"
 #import "NSString+BJExtend.h"
-#import "UIImageView+BJExtend.h"
+#import "NSString+BJHeight.h"
 #import "UIBarButtonItem+BJExtend.h"
-#import "UIDevice+BJExtend.h"
 #import "UIButton+BJExtend.h"
+#import "UIColor+BJExtend.h"
+#import "UIDevice+BJExtend.h"
 #import "UIImage+BJExtend.h"
+#import "UIImageView+BJExtend.h"
+#import "UITextView+BJExtend.h"
+#import "UIView+BJLayout.h"
+
+
 
 #endif /* BJCategory_h */
