@@ -469,4 +469,101 @@
     return str;
 }
 
++ (NSString *)timeStrFromTimeStampStr:(NSString *)stampStr {
+
+    if ([stampStr containsString:@"-"]) {
+        return stampStr;
+    }
+    NSTimeInterval interval = [stampStr doubleValue];
+    if (stampStr.length == 13) {
+        interval = interval / 1000;
+    }
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [formatter stringFromDate: date];
+    return dateString;
+}
+
++ (NSString *)dateStrFromDateStr:(NSString *)dateStr {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd"];
+    NSDate *date = [formatter dateFromString:dateStr];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
+    [formatter2 setDateFormat:@"yyyy年MM月dd日"];
+    NSString *dateString = [formatter2 stringFromDate:date];
+    return dateString;
+}
+
++ (BOOL )checkTheDate:(NSString *)string {
+
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [format dateFromString:string];
+    BOOL isToday = [[NSCalendar currentCalendar] isDateInToday:date];
+    return isToday;
+}
+
+- (NSString *)bj_stringIfStringIsZeroOrEmptyTransform:(NSString *)transtormString {
+
+    if (self.length == 0 || [self isEqualToString:@"0"]) {
+        return transtormString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringAppendStringAtLastIfNotContaintString:(NSString *)string {
+
+    if (![self containsString:string]) {
+        NSString *tempString = [NSString stringWithFormat:@"%@%@",self,string];
+        return tempString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringIfStringIsEqualToString:(NSString *)string toString:(NSString *)targetString {
+
+    if ([self isEqualToString:string]) {
+
+        return targetString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringRemoveStringContaintZeroAfterPointer {
+
+    if ([self hasSuffix:@".00"]) {
+        return [self stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    } else if ([self hasSuffix:@"0"] && [self containsString:@"."]) {
+        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-1)];
+        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
+    } else if ([self containsString:@"."] && [self hasSuffix:@"0"]) {
+        return [self substringWithRange:NSMakeRange(0, self.length-1)];
+    } else if([self hasSuffix:@"0001"] && ![self containsString:@".0001"]) {
+        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-4)];
+        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
+    } else if([self hasSuffix:@"9999"] && [self containsString:@"."]) {
+        NSString *temp = self;
+        double tempDouble = [temp doubleValue];
+        NSMutableString *string = [NSMutableString stringWithFormat:@"%.10lf",tempDouble];
+        return [string bj_stringRemoveStringContaintZeroAfterPointer];
+    }
+    return self;
+}
+
+/**
+ 去掉字符串中多余的特殊符号， %
+
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringRemoveSymbol {
+
+    NSString *tempStr = self;
+    if ([self containsString:@"%%"]) {
+        tempStr = [tempStr stringByReplacingOccurrencesOfString:@"%%" withString:@"%"];
+        tempStr = [tempStr bj_stringRemoveSymbol];
+    }
+    return tempStr;
+}
+
 @end

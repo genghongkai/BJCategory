@@ -30,6 +30,10 @@
 		CE8374A3206E2B2B00635633 /* UIImage+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8374A2206E2B2B00635633 /* UIImage+BJExtend.m */; };
 		CE9983762077911A00080965 /* NSObject+BJKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9983752077911A00080965 /* NSObject+BJKVC.m */; };
 		CE99837A2077963000080965 /* NSObject+BJKVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9983792077963000080965 /* NSObject+BJKVCTest.m */; };
+		CEBAEA0C214F406C0031CE22 /* NSArray+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBAEA0A214F406B0031CE22 /* NSArray+BJExtend.m */; };
+		CEBAEA0F214F40C30031CE22 /* NSMutableAttributedString+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBAEA0D214F40C20031CE22 /* NSMutableAttributedString+BJExtend.m */; };
+		CEBAEA12214F41380031CE22 /* UITextView+BJExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBAEA11214F41380031CE22 /* UITextView+BJExtend.m */; };
+		CEBAEA15214F41650031CE22 /* NSString+BJHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBAEA14214F41650031CE22 /* NSString+BJHeight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,14 @@
 		CE9983742077911A00080965 /* NSObject+BJKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BJKVC.h"; sourceTree = "<group>"; };
 		CE9983752077911A00080965 /* NSObject+BJKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVC.m"; sourceTree = "<group>"; };
 		CE9983792077963000080965 /* NSObject+BJKVCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BJKVCTest.m"; sourceTree = "<group>"; };
+		CEBAEA0A214F406B0031CE22 /* NSArray+BJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BJExtend.m"; sourceTree = "<group>"; };
+		CEBAEA0B214F406B0031CE22 /* NSArray+BJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BJExtend.h"; sourceTree = "<group>"; };
+		CEBAEA0D214F40C20031CE22 /* NSMutableAttributedString+BJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+BJExtend.m"; sourceTree = "<group>"; };
+		CEBAEA0E214F40C20031CE22 /* NSMutableAttributedString+BJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+BJExtend.h"; sourceTree = "<group>"; };
+		CEBAEA10214F41380031CE22 /* UITextView+BJExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+BJExtend.h"; sourceTree = "<group>"; };
+		CEBAEA11214F41380031CE22 /* UITextView+BJExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+BJExtend.m"; sourceTree = "<group>"; };
+		CEBAEA13214F41650031CE22 /* NSString+BJHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BJHeight.h"; sourceTree = "<group>"; };
+		CEBAEA14214F41650031CE22 /* NSString+BJHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BJHeight.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,13 +194,19 @@
 		CE4B94BA206DDCED007994D9 /* BJCategories */ = {
 			isa = PBXGroup;
 			children = (
+				CEBAEA13214F41650031CE22 /* NSString+BJHeight.h */,
+				CEBAEA14214F41650031CE22 /* NSString+BJHeight.m */,
 				CE4B94C4206DE4E2007994D9 /* BJCategory.h */,
 				CE4B94C5206DE542007994D9 /* BJCategoryConst.h */,
 				CE4B94C6206DE542007994D9 /* BJCategoryConst.m */,
 				CE796AF5207E126000054C8D /* NSArray+Log.h */,
 				CE796AF6207E126100054C8D /* NSArray+Log.m */,
+				CEBAEA0B214F406B0031CE22 /* NSArray+BJExtend.h */,
+				CEBAEA0A214F406B0031CE22 /* NSArray+BJExtend.m */,
 				CE4C5D89207CC6CF005F89A4 /* NSDictionary+Log.h */,
 				CE4C5D88207CC6CE005F89A4 /* NSDictionary+Log.m */,
+				CEBAEA0E214F40C20031CE22 /* NSMutableAttributedString+BJExtend.h */,
+				CEBAEA0D214F40C20031CE22 /* NSMutableAttributedString+BJExtend.m */,
 				CE4FD4EC2071C4A1000BBE97 /* NSObject+BJKVO.h */,
 				CE4FD4EB2071C4A1000BBE97 /* NSObject+BJKVO.m */,
 				CE9983742077911A00080965 /* NSObject+BJKVC.h */,
@@ -201,6 +219,8 @@
 				CE4B94BF206DE3EC007994D9 /* UIView+BJLayout.m */,
 				CE83748F206E170400635633 /* NSString+BJExtend.h */,
 				CE837490206E170400635633 /* NSString+BJExtend.m */,
+				CEBAEA10214F41380031CE22 /* UITextView+BJExtend.h */,
+				CEBAEA11214F41380031CE22 /* UITextView+BJExtend.m */,
 				CE837492206E1A0700635633 /* UIImageView+BJExtend.h */,
 				CE837493206E1A0700635633 /* UIImageView+BJExtend.m */,
 				CE837498206E1D8800635633 /* UIBarButtonItem+BJExtend.h */,
@@ -354,10 +374,14 @@
 				CE4B948D206DDCA9007994D9 /* ViewController.m in Sources */,
 				CE796AF7207E126100054C8D /* NSArray+Log.m in Sources */,
 				CE837494206E1A0700635633 /* UIImageView+BJExtend.m in Sources */,
+				CEBAEA15214F41650031CE22 /* NSString+BJHeight.m in Sources */,
 				CE4B94BD206DDD2F007994D9 /* UIColor+BJExtend.m in Sources */,
 				CE83749A206E1D8800635633 /* UIBarButtonItem+BJExtend.m in Sources */,
+				CEBAEA0C214F406C0031CE22 /* NSArray+BJExtend.m in Sources */,
+				CEBAEA12214F41380031CE22 /* UITextView+BJExtend.m in Sources */,
 				CE83749D206E20A900635633 /* UIDevice+BJExtend.m in Sources */,
 				CE4B94C3206DE3ED007994D9 /* NSObject+BJRoute.m in Sources */,
+				CEBAEA0F214F40C30031CE22 /* NSMutableAttributedString+BJExtend.m in Sources */,
 				CE4B9498206DDCA9007994D9 /* main.m in Sources */,
 				CE837491206E170400635633 /* NSString+BJExtend.m in Sources */,
 				CE8374A3206E2B2B00635633 /* UIImage+BJExtend.m in Sources */,

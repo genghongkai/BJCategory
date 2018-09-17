@@ -203,4 +203,68 @@
  @return 去掉空格后的字符串
  */
 + (NSString *)removeStrSpace:(NSString *)str;
+
+/**
+ 时间戳字符串转标准时间字符串
+
+ @param stampStr 时间戳字符串
+ @return 标准时间字符串
+ */
++ (NSString *)timeStrFromTimeStampStr:(NSString *)stampStr;
+
+/**
+ 日期字符串转日期字符串，转换后，如：2018年02月03日
+
+ @param dateStr 日期字符串
+ @return 日期字符串
+ */
++ (NSString *)dateStrFromDateStr:(NSString *)dateStr;
+
+/**
+ 判断指定日期是否为今天
+
+ @param string 指定日期
+ @return YES,是今天;NO,不是今天.
+ */
++ (BOOL )checkTheDate:(NSString *)string;
+
+/**
+ 字符串是空，或者是@"0",或者是小于1的@"0.8" 转目标字符串。目前只有价格能用到。
+
+ @param transtormString 需要转换的字符串
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringIfStringIsZeroOrEmptyTransform:(NSString *)transtormString;
+
+/**
+ 目标字符串没有包含指定字符串，就在后面拼接上指定字符串
+
+ @param string 指定字符串
+ @return 拼接后的字符串
+ */
+- (NSString *)bj_stringAppendStringAtLastIfNotContaintString:(NSString *)string;
+
+/**
+ 目标字符串等于一个指定字符串，转换为另一个字符串
+
+ @param string 指定字符串
+ @param targetString 另一个字符串
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringIfStringIsEqualToString:(NSString *)string toString:(NSString *)targetString;
+
+/**
+ 去掉目标价格字符串末尾的0，注意：仅限于保留两位小数
+
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringRemoveStringContaintZeroAfterPointer;
+
+/**
+ 去掉字符串中多余的特殊符号， %
+
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringRemoveSymbol;
+
 @end
