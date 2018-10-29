@@ -73,7 +73,7 @@
 + (BOOL)isValidateMobile:(NSString *)mobile
 {
     //手机号以13， 15，18,17,14开头，
-    NSString *phoneRegex = @"^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|18[0-9]{9}$|17[0-9]{9}$|14[0-9]{9}";
+    NSString *phoneRegex = @"^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|18[0-9]{9}$|17[0-9]{9}$|14[0-9]{9}|19[0-9]{9}";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phoneTest evaluateWithObject:mobile];
 }
@@ -149,6 +149,14 @@
     }
     NSDate *dta = [self.formatter dateFromString:aDate];
     NSDate *dtb = [self.formatter dateFromString:bDate];
+    {
+        if (!dta && !dtb) {
+            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"yyyy-MM-dd"];
+            dta = [formatter dateFromString:aDate];
+            dtb = [formatter dateFromString:bDate];
+        }
+    }
     NSComparisonResult result = [dta compare:dtb];
 
     return result;
@@ -181,6 +189,20 @@
                             @"iPhone7,1",
                             @"iPhone8,1",
                             @"iPhone8,2",
+                            @"iPhone9,1",
+                            @"iPhone9,2",
+                            @"iPhone9,3",
+                            @"iPhone9,4",
+                            @"iPhone10,1",
+                            @"iPhone10,4",
+                            @"iPhone10,2",
+                            @"iPhone10,5",
+                            @"iPhone10,3",
+                            @"iPhone10,6",
+                            @"iPhone11,8",
+                            @"iPhone11,2",
+                            @"iPhone11,4",
+                            @"iPhone11,6",
 
                             @"iPod1,1",
                             @"iPod2,1",
@@ -225,6 +247,20 @@
                                 @"iPhone 6 Plus",
                                 @"iPhone 6s",
                                 @"iPhone 6s Plus",
+                                @"iPhone 7",
+                                @"iPhone 7 Plus",
+                                @"iPhone 7",
+                                @"iPhone 7 Plus",
+                                @"iPhone 8",
+                                @"iPhone 8",
+                                @"iPhone 8 Plus",
+                                @"iPhone 8 Plus",
+                                @"iPhone X",
+                                @"iPhone X",
+                                @"iPhone XR",
+                                @"iPhone XS",
+                                @"iPhone XS Max",
+                                @"iPhone XS Max",
 
                                 @"iPod Touch 1G",
                                 @"iPod Touch 2G",
@@ -262,14 +298,17 @@
     return [UIDevice currentDevice].model;
 }
 
-+ (NSString*)networkType{
+//IPHONEX  无法获取网络状态
++ (NSString*)networkType_HK{
     //  能  [[self deviceVersion] isEqualToString:@"iPhone X"] 来判断，因为模拟  会 返回 iPhone X
     NSArray *subviews ;
     if ([[[UIApplication sharedApplication] valueForKeyPath:@"_statusBar"] isKindOfClass:NSClassFromString(@"UIStatusBar_Modern")]) {
+        // subviews = [[[UIApplication sharedApplication] valueForKeyPath:@"_statusBar"] subviews] ;
         subviews = [[[[[UIApplication sharedApplication] valueForKeyPath:@"_statusBar"] valueForKeyPath:@"_statusBar"] valueForKeyPath:@"foregroundView"] subviews];
     } else {
         subviews = [[[[UIApplication sharedApplication] valueForKeyPath:@"_statusBar"] valueForKeyPath:@"foregroundView"] subviews];
     }
+
     NSNumber *dataNetworkItemView = nil;
     for (id subview in subviews) {
         if([subview isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]])
@@ -307,6 +346,62 @@
             break;
     }
     return str;
+}
+
+//获取statusBar的网络状态
+//支持iPhone X
++ (NSString *)networkType{
+    NSArray *children;
+    UIApplication *app = [UIApplication sharedApplication];
+    NSString *state = [[NSString alloc] init];
+    state = @"0";
+    //iPhone X
+    if ([[app valueForKeyPath:@"_statusBar"] isKindOfClass:NSClassFromString(@"UIStatusBar_Modern")]) {
+        children = [[[[app valueForKeyPath:@"_statusBar"] valueForKeyPath:@"_statusBar"] valueForKeyPath:@"foregroundView"] subviews];
+        for (UIView *view in children) {
+            for (id child in view.subviews) {
+                //wifi
+                if ([child isKindOfClass:NSClassFromString(@"_UIStatusBarWifiSignalView")]) {
+                    state = @"Wifi";
+                }
+                //2G 3G 4G
+                if ([child isKindOfClass:NSClassFromString(@"_UIStatusBarStringView")]) {
+                    if ([[child valueForKey:@"_originalText"] containsString:@"G"]) {
+                        state = [child valueForKey:@"_originalText"];
+                    }
+                }
+            }
+        }
+
+    }else {
+        children = [[[app valueForKeyPath:@"_statusBar"] valueForKeyPath:@"foregroundView"] subviews];
+        for (id child in children) {
+            if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
+                //获取到状态栏
+                switch ([[child valueForKeyPath:@"dataNetworkType"] intValue]) {
+                    case 0:
+                        state = @"无网络";
+                        //无网模式
+                        break;
+                    case 1:
+                        state = @"2G";
+                        break;
+                    case 2:
+                        state = @"3G";
+                        break;
+                    case 3:
+                        state = @"4G";
+                        break;
+                    case 5:
+                        state = @"Wifi";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    return state;
 }
 
 +(NSString *)UserLocations
@@ -467,103 +562,6 @@
 + (NSString *)removeStrSpace:(NSString *)phoneNum {
     NSString *str = [phoneNum stringByReplacingOccurrencesOfString:@" " withString:@""];
     return str;
-}
-
-+ (NSString *)timeStrFromTimeStampStr:(NSString *)stampStr {
-
-    if ([stampStr containsString:@"-"]) {
-        return stampStr;
-    }
-    NSTimeInterval interval = [stampStr doubleValue];
-    if (stampStr.length == 13) {
-        interval = interval / 1000;
-    }
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString = [formatter stringFromDate: date];
-    return dateString;
-}
-
-+ (NSString *)dateStrFromDateStr:(NSString *)dateStr {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyyMMdd"];
-    NSDate *date = [formatter dateFromString:dateStr];
-    NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
-    [formatter2 setDateFormat:@"yyyy年MM月dd日"];
-    NSString *dateString = [formatter2 stringFromDate:date];
-    return dateString;
-}
-
-+ (BOOL )checkTheDate:(NSString *)string {
-
-    NSDateFormatter *format = [[NSDateFormatter alloc]init];
-    [format setDateFormat:@"yyyy-MM-dd"];
-    NSDate *date = [format dateFromString:string];
-    BOOL isToday = [[NSCalendar currentCalendar] isDateInToday:date];
-    return isToday;
-}
-
-- (NSString *)bj_stringIfStringIsZeroOrEmptyTransform:(NSString *)transtormString {
-
-    if (self.length == 0 || [self isEqualToString:@"0"]) {
-        return transtormString;
-    }
-    return self;
-}
-
-- (NSString *)bj_stringAppendStringAtLastIfNotContaintString:(NSString *)string {
-
-    if (![self containsString:string]) {
-        NSString *tempString = [NSString stringWithFormat:@"%@%@",self,string];
-        return tempString;
-    }
-    return self;
-}
-
-- (NSString *)bj_stringIfStringIsEqualToString:(NSString *)string toString:(NSString *)targetString {
-
-    if ([self isEqualToString:string]) {
-
-        return targetString;
-    }
-    return self;
-}
-
-- (NSString *)bj_stringRemoveStringContaintZeroAfterPointer {
-
-    if ([self hasSuffix:@".00"]) {
-        return [self stringByReplacingOccurrencesOfString:@".00" withString:@""];
-    } else if ([self hasSuffix:@"0"] && [self containsString:@"."]) {
-        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-1)];
-        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
-    } else if ([self containsString:@"."] && [self hasSuffix:@"0"]) {
-        return [self substringWithRange:NSMakeRange(0, self.length-1)];
-    } else if([self hasSuffix:@"0001"] && ![self containsString:@".0001"]) {
-        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-4)];
-        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
-    } else if([self hasSuffix:@"9999"] && [self containsString:@"."]) {
-        NSString *temp = self;
-        double tempDouble = [temp doubleValue];
-        NSMutableString *string = [NSMutableString stringWithFormat:@"%.10lf",tempDouble];
-        return [string bj_stringRemoveStringContaintZeroAfterPointer];
-    }
-    return self;
-}
-
-/**
- 去掉字符串中多余的特殊符号， %
-
- @return 转换后的字符串
- */
-- (NSString *)bj_stringRemoveSymbol {
-
-    NSString *tempStr = self;
-    if ([self containsString:@"%%"]) {
-        tempStr = [tempStr stringByReplacingOccurrencesOfString:@"%%" withString:@"%"];
-        tempStr = [tempStr bj_stringRemoveSymbol];
-    }
-    return tempStr;
 }
 
 @end
