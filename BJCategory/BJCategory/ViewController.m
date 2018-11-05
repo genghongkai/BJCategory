@@ -11,15 +11,36 @@
 
 @interface ViewController ()
 
+/** <##>*/
+@property (nonatomic, strong) UIView *redView;
+/** <##>*/
+@property (nonatomic, strong) UILabel *nameLabel;
+
+
 @end
 
 @implementation ViewController
 
+//测试懒加载
+bj_lazyload_objc(UIView, redView);
+//测试自定义懒加载
+bj_lazyload_objc_custom(UILabel, nameLabel, ^(UILabel *label) {
+    label.text = @"自定义";
+    label.textColor = [UIColor redColor];
+    label.frame = CGRectMake(10, 100, 100, 20);
+});
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //测试懒加载
+    self.redView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.redView];
+    [self.view addSubview:self.nameLabel];
 
-    //
+    //测试输出日志
+    BJCategoryLog(@"11111");
+
     [self testNSArrayAndBJExtendFunction];
     
     [self testNSArrayAndLogFunction];
@@ -134,5 +155,7 @@
 - (void)testUIViewBJLayoutFunction {
 
 }
+
+
 
 @end
