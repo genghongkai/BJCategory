@@ -27,7 +27,7 @@
 
 - (void)testExample {
 
-    NSLog(@"%zi",[NSString compareDate:@"2012-12-22 11:22:40" withDate:@"2012-12-22 11:24:00"]);
+    NSLog(@"%zi",[NSString bj_compareDate:@"2012-12-22 11:22:40" withDate:@"2012-12-22 11:24:00"]);
 }
 
 - (void)testPerformanceExample {
