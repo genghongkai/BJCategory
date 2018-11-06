@@ -18,4 +18,13 @@
  */
 + (UIImage *)generatorImageWithColor:(UIColor *)color;
 
+/**
+ 图片剪切
+
+ @param image 目标图片
+ @param rect 区域
+ @return 剪切后的图片
+ */
++ (UIImage *)ct_imageFromImage:(UIImage *)image inRect:(CGRect)rect;
+
 @end
