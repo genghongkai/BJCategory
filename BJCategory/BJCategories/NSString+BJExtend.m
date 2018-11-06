@@ -28,7 +28,7 @@
  *
  *  @return 是中文返回YES,不是返回NO.
  */
--(BOOL)isChinese
+-(BOOL)bj_isChinese
 {
     NSString *match=@"(^[\u4e00-\u9fa5]+$)";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
@@ -42,7 +42,7 @@
  *
  *  @return 格式正确返回YES，错误返回NO.
  */
-- (BOOL)isPureInt:(NSString *)string
+- (BOOL)bj_isPureInt:(NSString *)string
 {
     NSScanner* scan = [NSScanner scannerWithString:string];
     int val;
@@ -56,7 +56,7 @@
  *
  *  @return 格式正确返回YES，错误返回NO.
  */
-+ (BOOL)isValidateEmail:(NSString *)email
++ (BOOL)bj_isValidateEmail:(NSString *)email
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
@@ -70,7 +70,7 @@
  *
  *  @return 格式正确返回YES,错误返回NO
  */
-+ (BOOL)isValidateMobile:(NSString *)mobile
++ (BOOL)bj_isValidateMobile:(NSString *)mobile
 {
     //手机号以13， 15，18,17,14开头，
     NSString *phoneRegex = @"^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|18[0-9]{9}$|17[0-9]{9}$|14[0-9]{9}|19[0-9]{9}";
@@ -85,7 +85,7 @@
  *
  *  @return 格式正确返回YES，错误返回NO
  */
-+(BOOL)isValidateAboutCardId:(NSString *)cardid
++(BOOL)bj_isValidateAboutCardId:(NSString *)cardid
 {
     BOOL flag = NO;
     NSString *regex2 = @"^(^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$)|(^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])((\\d{4})|\\d{3}[Xx])$)$";
@@ -102,7 +102,7 @@
  *
  *  @return 返回结果
  */
-+ (NSString *)decimalwithFormat:(NSString *)format floatV:(float)floatV
++ (NSString *)bj_decimalwithFormat:(NSString *)format floatV:(float)floatV
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setPositiveFormat:format];
@@ -121,7 +121,7 @@
     return formatter;
 }
 
-+ (NSDate *)getCurrentTime{
++ (NSDate *)bj_getCurrentTime{
     NSDate *date = [NSDate date];
     //获取当前系统所在时区
     NSTimeZone *zone = [NSTimeZone systemTimeZone];
@@ -131,13 +131,13 @@
     date = [self.formatter dateFromString:dateTime];
     return date;
 }
-+ (NSString *)getCurrentTimeStr {
++ (NSString *)bj_getCurrentTimeStr {
     NSString *dateTime=[self.formatter stringFromDate:[NSDate date]];
     return dateTime;
 }
 
 //比较两个日期的大小  日期格式为2016-08-14 08：46：20
-+ (NSComparisonResult)compareDate:(NSString*)aDate withDate:(NSString*)bDate
++ (NSComparisonResult)bj_compareDate:(NSString*)aDate withDate:(NSString*)bDate
 {
     if (!aDate.length || !bDate.length) {
         return 0;
@@ -162,7 +162,7 @@
     return result;
 }
 
-+ (NSString*)deviceModelName
++ (NSString*)bj_deviceModelName
 {
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -293,7 +293,7 @@
     return modelNameString ? modelNameString : @"iOS";
 }
 
-+ (NSString*)deviceMod{
++ (NSString*)bj_deviceMod{
 
     return [UIDevice currentDevice].model;
 }
@@ -350,7 +350,7 @@
 
 //获取statusBar的网络状态
 //支持iPhone X
-+ (NSString *)networkType{
++ (NSString *)bj_networkType{
     NSArray *children;
     UIApplication *app = [UIApplication sharedApplication];
     NSString *state = [[NSString alloc] init];
@@ -404,7 +404,7 @@
     return state;
 }
 
-+(NSString *)UserLocations
++(NSString *)bj_userLocations
 {
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
@@ -417,7 +417,7 @@
 }
 
 #pragma mark -获取WiFi名称
-+(NSString *)wifeName {
++(NSString *)bj_wifeName {
     id info = nil;
     NSString *str = @"";
     NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
@@ -428,7 +428,7 @@
     return str;
 }
 
-+ (NSString*)language
++ (NSString*)bj_language
 {
     NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
     NSArray* languages = [defs objectForKey:@"AppleLanguages"];
@@ -449,7 +449,7 @@
     }
 }
 
-+(NSString*)carrierName{
++(NSString*)bj_carrierName{
     CTTelephonyNetworkInfo *telephonyInfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *carrier = [telephonyInfo subscriberCellularProvider];
     NSString *currentCountry=[carrier carrierName];
@@ -461,7 +461,7 @@
     }
 }
 
-+ (NSString *)iPAddress
++ (NSString *)bj_iPAddress
 {
     BOOL success;
     struct ifaddrs * addrs;
@@ -484,7 +484,7 @@
     return @"";
 }
 
-- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+- (NSDictionary *)bj_dictionaryWithJsonString:(NSString *)jsonString
 {
     if (jsonString == nil) {
         return nil;
@@ -499,7 +499,7 @@
     return dic;
 }
 /** 字典转json串 */
-- (NSString*)dictionaryToJson:(NSDictionary *)dic
+- (NSString*)bj_dictionaryToJson:(NSDictionary *)dic
 {
     NSError *parseError = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
@@ -507,7 +507,7 @@
 }
 
 /** 时间戳 */
-+ (NSString*)simulateAndRenderScene{
++ (NSString*)bj_simulateAndRenderScene{
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval a = [dat timeIntervalSince1970]*1000;
     NSString *timeString = [NSString stringWithFormat:@"%.f", a];
@@ -515,7 +515,7 @@
 }
 
 /** 获取订单号 */
-+ (NSString *)generateTradeNO
++ (NSString *)bj_generateTradeNO
 {
     static int kNumber = 15;
 
@@ -532,7 +532,7 @@
 }
 
 /** 手机号添加掩码 */
-+ (NSString *)addCoverupCode:(NSString *)phoneNum
++ (NSString *)bj_addCoverupCode:(NSString *)phoneNum
 {
     if (phoneNum.length < NSMaxRange(NSMakeRange(3, 4))) {
         return @"";
@@ -546,7 +546,7 @@
 }
 
 /** 手机号格式 添加空格 */
-+ (NSString *)instStrSpace:(NSString *)phoneNum {
++ (NSString *)bj_instStrSpace:(NSString *)phoneNum {
 
     if (phoneNum.length < NSMaxRange(NSMakeRange(0, 7))) {
         return phoneNum;
@@ -559,9 +559,156 @@
 }
 
 /** 去掉字符串空格 */
-+ (NSString *)removeStrSpace:(NSString *)phoneNum {
++ (NSString *)bj_removeStrSpace:(NSString *)phoneNum {
     NSString *str = [phoneNum stringByReplacingOccurrencesOfString:@" " withString:@""];
     return str;
+}
+
++ (NSString *)bj_timeStrFromTimeStampStr:(NSString *)stampStr {
+
+    if ([stampStr containsString:@"-"]) {
+        return stampStr;
+    }
+    NSTimeInterval interval = [stampStr doubleValue];
+    if (stampStr.length == 13) {
+        interval = interval / 1000;
+    }
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [formatter stringFromDate: date];
+    return dateString;
+}
+
++ (NSString *)bj_dateStrFromDateStr:(NSString *)dateStr {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd"];
+    NSDate *date = [formatter dateFromString:dateStr];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
+    [formatter2 setDateFormat:@"yyyy年MM月dd日"];
+    NSString *dateString = [formatter2 stringFromDate:date];
+    return dateString;
+}
+
++ (BOOL )bj_checkTheDate:(NSString *)string {
+
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [format dateFromString:string];
+    BOOL isToday = [[NSCalendar currentCalendar] isDateInToday:date];
+    return isToday;
+}
+
+- (NSString *)bj_stringIfStringIsZeroOrEmptyTransform:(NSString *)transtormString {
+
+    if (self.length == 0 || [self isEqualToString:@"0"]) {
+        return transtormString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringAppendStringAtLastIfNotContaintString:(NSString *)string {
+
+    if (![self containsString:string]) {
+        NSString *tempString = [NSString stringWithFormat:@"%@%@",self,string];
+        return tempString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringIfStringIsEqualToString:(NSString *)string toString:(NSString *)targetString {
+
+    if ([self isEqualToString:string]) {
+
+        return targetString;
+    }
+    return self;
+}
+
+- (NSString *)bj_stringRemoveStringContaintZeroAfterPointer {
+
+    if ([self hasSuffix:@".00"]) {
+        return [self stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    } else if ([self hasSuffix:@"0"] && [self containsString:@"."]) {
+        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-1)];
+        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
+    } else if ([self containsString:@"."] && [self hasSuffix:@"0"]) {
+        return [self substringWithRange:NSMakeRange(0, self.length-1)];
+    } else if([self hasSuffix:@"0001"] && ![self containsString:@".0001"]) {
+        NSString *temp = [self substringWithRange:NSMakeRange(0, self.length-4)];
+        return [temp bj_stringRemoveStringContaintZeroAfterPointer];
+    } else if([self hasSuffix:@"9999"] && [self containsString:@"."]) {
+        NSString *temp = self;
+        double tempDouble = [temp doubleValue];
+        NSMutableString *string = [NSMutableString stringWithFormat:@"%.10lf",tempDouble];
+        return [string bj_stringRemoveStringContaintZeroAfterPointer];
+    }
+    return self;
+}
+
+/**
+ 去掉字符串中多余的特殊符号， %
+
+ @return 转换后的字符串
+ */
+- (NSString *)bj_stringRemoveSymbol {
+
+    NSString *tempStr = self;
+    if ([self containsString:@"%%"]) {
+        tempStr = [tempStr stringByReplacingOccurrencesOfString:@"%%" withString:@"%"];
+        tempStr = [tempStr bj_stringRemoveSymbol];
+    }
+    return tempStr;
+}
+
+
++ (long)bj_timeStampWithDate:(NSDate *)timeDate {
+
+    long timeStamp = 0;
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSString *timeString = [formatter stringFromDate:timeDate];
+    NSDate *date = [formatter dateFromString:timeString];
+    timeStamp = (long)[date timeIntervalSince1970];
+
+    return timeStamp;
+}
+
++ (NSString *)bj_dateWithTimeStamp:(long)longValue {
+
+    long value = longValue;
+
+    NSDateFormatter *formatDay = [[NSDateFormatter alloc] init];
+    formatDay.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+    NSNumber *time = [NSNumber numberWithLong:value];
+    //转换成NSTimeInterval
+    NSTimeInterval nsTimeInterval = [time longValue];
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:nsTimeInterval];
+    NSString *dayStr = [formatDay stringFromDate:date];
+
+    return dayStr;
+}
+
++ (long)bj_timeStampWithDateTZ:(NSString *)timeStr {
+
+    long timeStamp = 0;
+    if (timeStr.length ==0) {
+        return 0;
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    timeStr = [timeStr stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+    timeStr = [timeStr stringByReplacingOccurrencesOfString:@"Z" withString:@""];
+    NSRange range;
+    range = [timeStr rangeOfString:@"."];
+    if (range.length > 0) {
+        timeStr = [timeStr substringToIndex:range.location];
+    }
+    NSDate *date = [formatter dateFromString:timeStr];
+    timeStamp = (long)[date timeIntervalSince1970];
+
+    return timeStamp;
 }
 
 @end

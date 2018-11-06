@@ -16,5 +16,14 @@
 + (CGFloat )bjHeightWithString:(NSString *)string limtWidth:(CGFloat )limtWidth font:(UIFont *)font;
 
 + (CGFloat )bjWidthWithString:(NSString *)string limtHeight:(CGFloat )limtHeight font:(UIFont *)font;
++ (CGFloat)bjGetSpaceLabelHeightwithSpeace:(CGFloat)lineSpeace withString:(NSString *)string withFont:(UIFont*)font withWidth:(CGFloat)width;
+
+/**
+ 中文url转译
+
+ @param urlString url
+ @return 转译后的url
+ */
++ (NSString *)bjTransformContainChineseUrl:(NSString *)urlString;
 
 @end
